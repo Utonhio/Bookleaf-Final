@@ -1,0 +1,37 @@
+page-editbook {
+    @import url('https://fonts.googleapis.com/css?family=Lora|Roboto:400,500');
+    @import url('https://fonts.googleapis.com/css?family=Assistant|Cinzel|Lato&display=swap');
+
+    #labeladdbook{
+        padding-left: 3.8vw;
+        font-family: 'Roboto';
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+
+    ::placeholder{
+        color: rgb(124, 124, 124);
+        font-family:'Roboto';
+        font-size:15px;
+        position: relative;
+        left:.8%;
+    }
+
+    .inputsBox{
+        width: 60vw;
+        padding-left:5px;
+        height: 33px;
+        color: black;
+        background-color: rgb(235, 235, 235);
+        font-family: 'Comics sans';
+        border-radius: 5px;
+        border-width: .5px;
+        border-color: rgb(208, 207, 207);
+        border-style:solid;
+    }
+
+    #btnAddbook{
+        width: 90vw;
+        background-color: 	#6DB452;
+    }
+}

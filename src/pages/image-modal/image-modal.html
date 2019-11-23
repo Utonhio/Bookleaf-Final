@@ -1,0 +1,21 @@
+<ion-content fullscreen>
+
+  <ion-item class="close-fake" lines="none" text-center>
+    <button ion-button (tap)="close()" fill="clear" color="light">
+      <ion-icon name="close" slot="start"></ion-icon>
+      Back
+    </button>
+
+    <button ion-button (tap)="zoom(true)" fill="clear" color="light">
+      <ion-icon name="add" slot="start"></ion-icon>
+      In
+    </button>
+
+    <button ion-button (tap)="zoom(false)" fill="clear" color="light">
+      <ion-icon name="remove" slot="start"></ion-icon>
+      Out
+    </button>
+
+  </ion-item>
+
+</ion-content>

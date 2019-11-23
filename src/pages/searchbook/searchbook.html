@@ -1,0 +1,49 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-navbar>
+      <ion-title>Busqueda</ion-title>
+    </ion-navbar>
+  </ion-toolbar>
+
+  <ion-searchbar animated (ionChange)="buscar( $event )" ionClear>
+
+  </ion-searchbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list *ngIf="this.searchFree == 'Gratuito'">
+    <ion-item  *ngFor="let book of searchListFree | filtro: textoBuscar: 'name'" >
+      <ion-label (tap)="open(book)">
+        <ion-row>
+          <ion-col >
+            <img id="img-size" src="{{book.urlCover}}">
+          </ion-col>
+          <ion-col style="padding-top: 10%; padding-right: 10%">
+            <h3>{{book.name}}</h3>
+            <p>{{book.author}}</p>
+            <p>{{book.genre}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="this.searchPremium == 'Premium'"> 
+    <ion-item *ngFor="let book of searchListPremium | filtro: textoBuscar: 'name'" >
+      <ion-label (tap)="open(book)">
+        <ion-row>
+          <ion-col>
+            <img id="img-size" src="{{book.urlCover}}">
+          </ion-col>
+          <ion-col style="padding-top: 10%; padding-right: 10%">
+            <h3>{{book.name}}</h3>
+            <p>{{book.author}}</p>
+            <p>{{book.genre}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

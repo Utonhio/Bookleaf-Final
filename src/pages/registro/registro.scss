@@ -1,0 +1,125 @@
+page-registro {
+    @import url('https://fonts.googleapis.com/css?family=Assistant|Cinzel|Lato&display=swap');
+    #login{
+        //background-image: url('../assets/img/Login.png');
+        background-color: white;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        
+    }
+    .loginForm{
+        margin-top: 10%;
+    }
+    .toolbar-background {
+        background-color: white;
+        opacity: 0;
+        
+      }
+      .back-button-icon-md {
+        color:  white;
+      }
+      .toolbar-title { color: lightseagreen}
+    #groupInputs{
+        padding-left: 6%;
+        padding-right: 6%;
+        
+    }
+    #iniciaSesionTexto{
+        margin-top: 60%;
+        color: white;
+        font-size: 20px;
+        text-align: center;
+    }
+    #itemInput{
+        background-color: transparent;
+        padding-right: 5%;
+    }
+    #buttonLoginDiv{
+        margin-top: 5%;
+        text-align: center;
+    }
+    #btnLogin{
+        width: 70%;
+        background-color: 	#6DB452;
+    }
+
+    #email-input{
+        color: #6DB452;
+        font-size: 13px;
+        font-family: 'Assistant';
+    }
+
+    #btnSignin{
+        width: 70%;
+        background-color: rgb(61, 63, 61);
+    }
+    #textLabel{
+        color: black;
+    }
+    #textPlaceholder{
+        color: black;
+    }
+    #welcomeText{
+        text-align: center;
+        color: lightseagreen;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 20px;
+    }
+    #textHelp{
+        color: black;
+        font-size: 13px;
+        opacity: 0.7;
+    }
+    #textCreateAccount{
+        color: rgb(247, 173, 15);
+        opacity: 0.7;
+    }
+    #textContra{
+        background-color: white;
+        text-decoration: none;
+        border: none;
+        width: 70%;
+        font-family: 'Assistant';
+        color: black;
+        opacity: 0.7;
+        font-size: 12px
+    }
+    .no-scroll .scroll-content{
+        overflow: hidden;
+   }
+   .center{
+    padding-top: 30px;
+    text-align: center;
+}
+
+.center-title{
+    text-align: center;
+}
+
+
+#img{
+    width: 200px;
+}
+
+#label{
+    padding-left: 5px;
+}
+
+#item{
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.signup{
+    background-image: url('../assets/imgs/logo1.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: white;
+}
+#textTitulo{
+    font-family: 'Assistant';
+    color: rgb(56, 53, 53);
+    opacity: 0.7;
+}
+
+}

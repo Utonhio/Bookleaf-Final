@@ -1,0 +1,20 @@
+
+
+<ion-content id="inicio" class="no-scroll" *ngFor="let role of this.role">
+    <div id="text">
+        <p id="mein-text">¿Que tipo de libros te gustaria ver?</p>
+    </div>
+    
+    <div id="buttonEducation">
+        <button ion-button  type="submit" (tap)="Educativo()" id="btnEdu">Educación</button>
+    </div>
+    <div id="buttonEntertainment" *ngIf="this.role.rol == 'GRATUITO'">
+        <button ion-button  type="submit" (tap)="upgradePremium()" id="btnEnt">Entretenimiento</button>
+    </div>
+    <div id="buttonEntertainment" *ngIf="this.role.rol == 'PREMIUM' || this.role.rol == 'ADMINISTRADOR'">
+        <button ion-button  type="submit" (tap)="Entretenimiento()" id="btnEnt">Entretenimiento</button>
+    </div>
+    <div id="buttonEducation" *ngIf="this.role.rol == 'ADMINISTRADOR'">
+        <button ion-button  type="submit" (tap)="Administrador()" id="btnEdu">Administrador</button>
+    </div>
+</ion-content>

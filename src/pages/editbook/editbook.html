@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Editar libro</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form #f="ngForm">
+    <ion-label id="labeladdbook">Nombre del libro</ion-label>
+    <ion-item>
+      <input class="inputsBox" [(ngModel)]="libro.nombre" name="nombre" type="text" placeholder="Nombre del libro" required>
+    </ion-item>
+
+    <ion-label id="labeladdbook">Autor</ion-label>
+    <ion-item>
+      <input class="inputsBox" [(ngModel)]="libro.autor" name="autor" type="text" placeholder="Nombre del autor" required>
+    </ion-item>
+
+    <ion-label id="labeladdbook">Genero</ion-label>
+    <ion-item>
+      <select class="inputsBox" id="mySelect" placeholder="Genero del libro" [(ngModel)]="libro.genero" name="genero" okText="Okay"
+        cancelText="Cancelar" required>
+        <option *ngFor="let genre of this.books | filterUnique" value="{{genre}}">{{genre}}</option>
+        <option value="Otro">Otro</option>
+      </select>
+    </ion-item>
+
+    <ion-item *ngIf="this.libro.genero == 'Otro'">
+        <ion-item>
+          <input class="inputsBox" [(ngModel)]="libro.otroGenero" name="otroGenero" type="text" placeholder="Nombre del genero" required>
+        </ion-item>
+      </ion-item>
+
+    <ion-label id="labeladdbook">Categoria</ion-label>
+    <ion-item>
+      <select class="inputsBox" id="mySelect" placeholder="Categoria del libro" [(ngModel)]="libro.categoria" name="categoria"
+        okText="Okay" cancelText="Cancelar" required>
+        <option *ngFor="let category of this.category" value="{{category}}">{{category}}</option>
+      </select>
+    </ion-item>
+
+
+    <ion-label id="labeladdbook">Descripción</ion-label>
+    <ion-item>
+      <textarea class="inputsBox" [(ngModel)]="libro.descripcion" name="descripcion" type="text" placeholder="Descripción del libro"
+        required></textarea>
+    </ion-item>
+
+    <ion-label id="labeladdbook">Archivo</ion-label>
+    <ion-item>
+      <input class="inputsBox" [(ngModel)]="libro.archivo" name="archivo" type="text" placeholder="URL archivo del libro" required>
+    </ion-item>
+
+    <ion-label id="labeladdbook">Portada</ion-label>
+    <ion-item>
+      <input class="inputsBox" [(ngModel)]="libro.portada" name="portada" type="text" placeholder="URL de la portada del libro" required>
+    </ion-item>
+
+    <button ion-button (click)="editBook()" id="btnAddbook" [disabled]="!f.valid">Guardar</button>
+  </form>
+</ion-content>

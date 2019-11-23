@@ -1,0 +1,37 @@
+<ion-content id="login">
+
+  <div class="center">
+    <img id="img" src='../assets/imgs/logo1.png' width="100px">
+  </div>
+
+  <h2 class="center-title" id="textTitulo">Registro</h2>
+
+  <form [formGroup]="signupForm" (submit)="signupUser()" novalidate class="loginForm">
+    <ion-item id="item">
+      <ion-label stacked>Correo</ion-label>
+      <ion-input id="email-input" #email formControlName="email" type="email"
+        placeholder="ejemplo@gmail.com"
+        [class.invalid]="!signupForm.controls.email.valid && signupForm.controls.email.dirty">
+      </ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!signupForm.controls.email.valid  && signupForm.controls.email.dirty">
+      <p>Correo Incorrecto</p>
+    </ion-item>
+
+    <ion-item id="item">
+        <ion-label id="label" color="dark" stacked>Contraseña</ion-label>
+        <ion-input type="password" #password formControlName="password" placeholder="contraseña"
+          [class.invalid]="!signupForm.controls.password.valid && signupForm.controls.password.dirty">
+        </ion-input>
+      </ion-item>
+      <ion-item class="error-message" *ngIf="!signupForm.controls.password.valid  && signupForm.controls.password.dirty">
+        <p>La contrasena necesita mas de 6 caracteres</p>
+      </ion-item>
+
+    <div id="buttonLoginDiv">
+      <button ion-button type="submit" id="btnLogin" (click)="signupUser()">Registrarme!</button>
+      <button ion-button (click)="Regresar()" id="btnSignin">Regresar</button>
+    </div>
+  </form>
+
+</ion-content>

@@ -1,0 +1,47 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Perfil</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="wrapper">
+    <div class="profile-card js-profile-card">
+
+      <div class="profile-card__img">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/avatar-372-456324.png" alt="profile card">
+      </div>
+
+      <div class="profile-card__cnt js-profile-cnt">
+        <ion-item>
+          <ion-label>
+            Correo: {{useremail}}
+          </ion-label>
+        </ion-item>
+        <div *ngFor="let role of this.role">
+          <div class="profile-card-loc">
+            <ion-item>
+              <ion-label>
+                Rol : {{this.role.rol}}
+              </ion-label>
+            </ion-item>
+          </div>
+          <div id="buttonRead" *ngIf="this.role.rol == 'GRATUITO'">
+            <button ion-button type="submit" (tap)="upgradePremium()" id="btnRead">Mejorar plan</button>
+          </div>
+
+        </div>
+        <div id="buttonRead">
+          <button ion-button type="submit" (tap)="logOut()" id="btnRead">Cerrar sesión</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{bookS.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+
+<ion-content>
+  <!--
+    <p>Please choose a book to view:</p>
+    <ion-list>
+      <ion-item *ngFor="let book of books" (tap)="show(book)">{{book.label}}</ion-item>
+    </ion-list>
+    -->
+  <div class="flex">
+    <div class="card">
+      <div class="header">
+        <img src="{{bookS.urlCover}}" alt="">
+
+      </div>
+      <div class="content">
+        <div class="articlemeta">
+          <ul class="left" *ngFor="let favoriteName of this.favoritesList">
+            <li *ngIf="this.favoriteName"><i (tap)="deleteFavorites(userId,bookS)">
+                <ion-icon id="heartFavorite" name="heart"></ion-icon>
+              </i>
+            </li>
+
+            <li *ngIf="!this.favoriteName"><i (tap)="addFavorite(userId,bookS)">
+                <ion-icon name="heart"></ion-icon>
+              </i>
+            </li>
+          </ul>
+
+          <ul class="left" *ngFor="let likeName of this.likesList">
+            <li *ngIf="this.likeName"><i (tap)="unlike(userId,bookS)">
+                <ion-icon id="like" ios="ios-thumbs-up" md="md-thumbs-up"></ion-icon>
+              </i>
+            </li>
+
+            <li *ngIf="!this.likeName"><i (tap)="like(userId,bookS)">
+                <ion-icon ios="ios-thumbs-up" md="md-thumbs-up"></ion-icon>
+              </i>
+            </li>
+          </ul>
+
+
+        </div>
+        <div class="closebar">
+          <h1>5 ways to create...</h1>
+          <a href="#0" class="closebttn"><i class="material-icons">&#xE5CD;</i></a>
+        </div>
+        <h4 id="book-title">{{bookS.name}}</h4>
+        <div id="buttonRead">
+          <button ion-button type="submit" (click)="show(bookS)" id="btnRead">Leer libro</button>
+        </div>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              {{bookS.genre}}
+            </ion-col>
+            <ion-col>
+              {{bookS.author}}
+            </ion-col>
+
+          </ion-row>
+        </ion-grid>
+        <p> {{bookS.description}}</p>
+      </div>
+    </div>
+  </div>
+</ion-content>

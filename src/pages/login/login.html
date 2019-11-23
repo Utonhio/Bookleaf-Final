@@ -1,0 +1,26 @@
+<ion-content id="login">
+
+  <div class="center">
+    <img id="img" src='../assets/imgs/logo1.png' width="100px">
+  </div>
+
+  <h2 class="center-title" id="textTitulo">Bookleaf</h2>
+
+  <ion-item id="item">
+    <ion-label id="label" color="dark" stacked>Correo electrónico</ion-label>
+    <ion-input type="text" [(ngModel)]="user.email" placeholder="" id="email-input"></ion-input>
+
+  </ion-item>
+
+  <ion-item id="item">
+    <ion-label id="label" color="dark" stacked>Contraseña</ion-label>
+    <ion-input type="password" [(ngModel)]="user.password" placeholder=""></ion-input>
+  </ion-item>
+
+  <div id="buttonLoginDiv">
+    <button ion-button type="submit" id="btnLogin" (click)="login(user)">Iniciar sesión</button>
+    <button ion-button (click)="guardarDato(user)" id="btnSignin">¿No tienes cuenta? Crea una!</button>
+    <button (click)="rest(user.email)" id="textContra">¿Olvidaste la contraseña? </button>
+  </div>
+
+</ion-content>

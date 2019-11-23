@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="bar bar-subheader item-input-inset bar-light" id="search-bar">
+      <label class="item-input-wrapper">
+        <ion-icon end (click)="openSearch()" slot="icon-only" name="search" id="icon-color"></ion-icon>
+      </label>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+  <div class="category">
+    <h4>Libros gratuitos</h4>
+  </div>
+  <div class="category-block">
+    <ion-slides #slide1>
+      <ion-slide *ngFor="let book of gratuitos">
+        <div>
+          <ion-card id="card-book" (tap)="open(book)">
+
+            <img class="img-size" src="{{book.urlCover}}">
+            <div id="stars-group">
+
+              <p id="stars-numbers">{{book.stars}}<ion-icon id="like-icon" ios="ios-thumbs-up" md="md-thumbs-up">
+                </ion-icon>
+              </p>
+            </div>
+
+          </ion-card>
+        </div>
+      </ion-slide>
+    </ion-slides>
+
+  </div>
+  <hr class="style13">
+  <div class="category">
+    <h4>Libros premium</h4>
+  </div>
+  <div class="category-block">
+    <ion-slides #slide2>
+      <ion-slide *ngFor="let book of premium">
+        <div>
+          <ion-card id="card-book" (tap)="open(book)">
+            <img class="img-size" src="{{book.urlCover}}">
+            <div id="stars-group">
+
+              <p id="stars-numbers">{{book.stars}}<ion-icon id="like-icon" ios="ios-thumbs-up" md="md-thumbs-up">
+                </ion-icon>
+              </p>
+            </div>
+          </ion-card>
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <hr class="style13">
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+
+        <ion-col>
+          <div id="row-contact">
+            <ion-icon slot="icon-only" name="contact" id="icon-contact" (tap)="openProfile()"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div id="row-switch">
+            <ion-icon slot="icon-only" name="switch" id="icon-switch" (tap)="returnType()"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div id="row-bookmark">
+            <ion-icon slot="icon-only" name="bookmark" id="icon-bookmark" (tap)="openFavorites()"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div id="row-book">
+            <ion-icon slot="icon-only" name="book" id="icon-book" (tap)="openLibrary()"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div id="row-addbook">
+            <ion-icon slot="icon-only" name="add" id="icon-addbook" (tap)="openAddBook()"></ion-icon>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

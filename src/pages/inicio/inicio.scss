@@ -1,0 +1,50 @@
+page-inicio {
+    #inicio{
+        background-image: url('../assets/imgs/Inicio.jpeg');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        
+    }
+    #buttonEducation{
+        margin-top: 187px;
+        text-align: center;
+    }
+    #btnEdu{
+        width: 70%;
+        border-radius: 20px;
+        letter-spacing: 1px;
+        font-size: 12px;
+        background-color: #689896;
+    }
+
+    #buttonEntertainment{
+        margin-top: 5px;
+        text-align: center;
+    }
+    #btnEnt{
+        width: 70%;
+        color: #689896;
+        border-radius: 20px;
+        font-size: 12px;
+        letter-spacing: 1px;
+        background-color: #ffffff;
+    }
+
+    #main-text{
+       
+        
+        color: #689896;
+    }
+
+    #text{
+        text-align: center;
+        font-size: 13px;
+        padding-top: 10px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #689896;
+    }
+   
+    .no-scroll .scroll-content{
+        overflow: hidden;
+   }
+}

@@ -1,0 +1,55 @@
+page-book {
+    #touchlayer, #book {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    height: 100%;
+    }
+
+    #touchlayer{
+        z-index: 999;
+        position: absolute
+    }
+
+    .range-md.range-has-pin {
+        padding-top: 1vh;
+    }
+
+    .range-md {
+        padding: 1vh;
+    }
+
+    .range-md .range-slider {
+        height: 3.5vh;
+    }
+
+    #book {
+        z-index: 0;
+    }
+
+    #book iframe {
+        border: none;
+    }
+
+    .scroll-content {
+        overflow-y: hidden;
+    }
+
+    #page-numbers{
+        font-size: 15px !important;
+        padding-left: 10px;
+    }
+
+    .toolbar {
+        background-color: #6DB452;
+    }
+    .bar-button::after {
+        color:white;
+    }
+
+
+    .toolbar-md-light .toolbar-title-md {
+        color:white;
+    }
+}

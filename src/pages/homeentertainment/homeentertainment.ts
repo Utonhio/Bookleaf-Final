@@ -8,6 +8,7 @@ import { InicioPage } from '../inicio/inicio';
 import { FavoritesPage } from '../favorites/favorites';
 import { CategoryPage } from '../category/category';
 import { SearchbookPage } from '../searchbook/searchbook';
+import { PurchasesPage } from '../purchases/purchases';
 
 @IonicPage()
 @Component({
@@ -69,6 +70,10 @@ export class HomeentertainmentPage {
     this.nav.push(SearchbookPage, {
       searchFree: 'Gratuito'
     });
+  }
+  
+  openPurchases(){
+    this.nav.push(PurchasesPage);
   }
 
   open(book) {

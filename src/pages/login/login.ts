@@ -42,21 +42,29 @@ export class LoginPage {
           buttons: ['Accept']
         });
         alert.present();
-
+        this.loading.dismiss();
       }
 
       else {
-        this.loading.dismiss();
+        
         this.navCtrl.push(InicioPage);
-
+        this.loading.dismiss();
       }
       //this.notesSservice.createuser(this.user);
 
+    }).catch(err=>{
+      this.loading.dismiss();
+      let alert = this.alertCtrl.create({
+        title: 'Datos incorrectos o cuenta ya registrada',
+        buttons:['Aceptar']
+      });
+      alert.present();
     });
   }
 
   registro(user) {
     //this.navCtrl.push(RegistroPage);
+    this.presentLoading();
     firebase.auth().createUserWithEmailAndPassword(user.email, user.password).then(data => {
       firebase.database().ref('/usuarios').child(data.user.uid).set({
         rol: user.rol,
@@ -73,6 +81,14 @@ export class LoginPage {
       alert.present();
 
 
+    }).catch(err=>{
+      this.loading.dismiss();
+      let alert = this.alertCtrl.create({
+        title: 'La contraseña debe contener al menos 6 caracteres',
+        subTitle: 'puede que la cuenta ya haya sido registrada',
+        buttons:['Aceptar']
+      });
+      alert.present();
     });
   }
 

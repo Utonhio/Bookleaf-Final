@@ -1,37 +1,47 @@
 <ion-header>
 
-    <ion-navbar transparent [color]="toolbarColor" [hidden]="!showToolbars">
-      <ion-buttons start>
+  <ion-navbar transparent [color]="toolbarColor" [hidden]="!showToolbars">
+    <ion-buttons start>
+
+      <button ion-button (tap)="toc($event)">
+        <p style="color: white">Capítulos&nbsp;</p>
+        <ion-icon name="arrow-dropright"></ion-icon>
+      </button>
+
+    </ion-buttons>
+    <ion-title style="color: white">{{pageTitle}}</ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content [ngStyle]="{'backgroundColor': bgColor}" no-bounce>
+  <div id="touchlayer" (tap)="toggleToolbars()" (swipe)="changePage($event)"></div>
+  <div id="book"></div>
+</ion-content>
+
+
+
+
+<ion-footer>
+  <ion-toolbar transparent [color]="toolbarColor" *ngIf="showToolbars">
+    <div *ngIf="showLoading" class="loading">
+      <ion-item>
+        <p style="color: white">Cargando páginas... <ion-spinner color="light"  name="circles"></ion-spinner></p>
         
-          <button ion-button (tap)="toc($event)">
-            <p style="color: white">Capítulos&nbsp;</p>
-              <ion-icon name="arrow-dropright"></ion-icon>
-            </button>
-      
-      </ion-buttons>
-      <ion-title style="color: white">{{pageTitle}}</ion-title>
-     
-    </ion-navbar>
-  </ion-header>
-  
-  <ion-content [ngStyle]="{'backgroundColor': bgColor}" no-bounce>
-    <div id="touchlayer" (tap)="toggleToolbars()" (swipe)="changePage($event)"></div>
-    <div id="book"></div>
-  </ion-content>
+      </ion-item>
 
-  
-  
 
-  <ion-footer>
-    <ion-toolbar transparent [color]="toolbarColor" *ngIf="showToolbars">
-        <ion-range (ionChange)="cambioRango($event)" min="1" max="{{book.pagination.totalPages}}" pin="true" color="tertiary">
+    </div>
+    <div *ngIf="showIonRange">
+      <ion-range (ionChange)="cambioRango($event)" min="1" max="{{book.pagination.totalPages}}" pin="true" color="light"
+        debounce="500">
         <ion-label slot="start">{{currentPage}}</ion-label>
         <ion-label slot="end">{{book.pagination.totalPages}}</ion-label>
       </ion-range>
-      <p style="color: white" id="page-numbers">
+      <p style="color: white;" id="page-numbers">
         Página {{currentPage}} {{(book && book.pagination && book.pagination.totalPages) ? ' de ' + book.pagination.totalPages : ''}}
       </p>
-      
-      
-    </ion-toolbar>
-  </ion-footer>
+    </div>
+
+  </ion-toolbar>
+</ion-footer>

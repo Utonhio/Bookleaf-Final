@@ -48,14 +48,23 @@
 
 
         </div>
-        <div class="closebar">
-          <h1>5 ways to create...</h1>
-          <a href="#0" class="closebttn"><i class="material-icons">&#xE5CD;</i></a>
-        </div>
         <h4 id="book-title">{{bookS.name}}</h4>
-        <div id="buttonRead">
-          <button ion-button type="submit" (click)="show(bookS)" id="btnRead">Leer libro</button>
+        <div *ngIf="purchasesList != bookS.name">
+          <div id="buttonRead" *ngFor="let role of this.role" >
+            <button *ngIf="bookS.category === 'Gratis'" ion-button type="submit" (click)="show(bookS)" id="btnRead">Leer libro</button>
+            <button *ngIf="bookS.category === 'Premium' && this.role.rol === 'GRATUITO'" ion-button type="submit" (click)="upgradePremium()" id="btnRead">Mejora a premium para leer</button>
+            <button *ngIf="bookS.category === 'Premium' && this.role.rol == 'PREMIUM'" ion-button type="submit" (click)="show(bookS)" id="btnRead">Leer libro</button>
+            <button *ngIf="bookS.category === 'Premium' && this.role.rol == 'ADMINISTRADOR'" ion-button type="submit" (click)="show(bookS)" id="btnRead">Leer libro</button>
+            <button *ngIf="bookS.category === 'Venta'" ion-button type="submit" (click)="buyBook(userId,bookS)" id="btnRead">Comprar por: {{bookS.precio}}$</button>
+          </div>
         </div>
+        
+        <div *ngIf="purchasesList == bookS.name">
+          <div id="buttonRead" *ngFor="let comprados of this.purchasesList">
+            <button ion-button type="submit" (click)="show(bookS)" id="btnRead">Leer libro</button>
+          </div>
+        </div>
+
         <ion-grid>
           <ion-row>
             <ion-col>

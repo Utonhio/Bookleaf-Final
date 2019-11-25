@@ -13,9 +13,6 @@ export class LibraryProvider {
   
  
   private cart = [];
- 
-  
-  
   constructor() {
     
   }
@@ -37,6 +34,18 @@ export class LibraryProvider {
   getBooksPremium() {
     var list = [];
     var query = firebase.database().ref('books').orderByChild('category').equalTo('Premium');
+    query.once('value', function (snapshot) {
+    snapshot.forEach(function(childSnapshot){
+      list.push(childSnapshot.val());
+    })
+
+  })
+    return list;
+  }
+
+  getBooksVenta() {
+    var list = [];
+    var query = firebase.database().ref('books').orderByChild('category').equalTo('Venta');
     query.once('value', function (snapshot) {
     snapshot.forEach(function(childSnapshot){
       list.push(childSnapshot.val());

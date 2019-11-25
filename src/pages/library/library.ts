@@ -47,7 +47,8 @@ export class LibraryPage {
       bookurlcover: book.urlCover,
       bookdescription: book.description,
       bookcategory: book.category,
-      bookstars : book.stars
+      bookstars : book.stars,
+      bookprecio : book.precio
     });
   }
 

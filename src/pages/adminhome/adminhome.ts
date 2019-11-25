@@ -18,8 +18,10 @@ import { SearchbookPage } from '../searchbook/searchbook';
 export class AdminhomePage {
   @ViewChild('slide1') slide1: Slides;
   @ViewChild('slide2') slide2: Slides;
+  @ViewChild('slide3') slide3: Slides;
   gratuitos = [];
   premium = [];
+  venta = [];
 
   constructor(public nav: NavController, public navParams: NavParams, private cartService: LibraryProvider) {
   }
@@ -27,11 +29,13 @@ export class AdminhomePage {
   ngOnInit() {
     this.gratuitos = this.cartService.getBooksFree();
     this.premium = this.cartService.getBooksPremium();
+    this.venta = this.cartService.getBooksVenta()
   }
 
   ionViewWillEnter() {
     this.gratuitos = this.cartService.getBooksFree();
     this.premium = this.cartService.getBooksPremium();
+    this.venta = this.cartService.getBooksVenta()
   }
 
   ngAfterViewInit() {
@@ -40,6 +44,9 @@ export class AdminhomePage {
 
     this.slide2.slidesPerView = 3;
     this.slide2.spaceBetween = 3;
+
+    this.slide3.slidesPerView = 3;
+    this.slide3.spaceBetween = 3;
 
   }
 

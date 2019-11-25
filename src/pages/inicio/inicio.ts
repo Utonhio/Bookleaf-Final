@@ -29,11 +29,6 @@ export class InicioPage {
     this.role = this.getRole();
   }
 
-  ionViewWillEnter() {
-    this.userId = firebase.auth().currentUser.uid;
-    this.role = this.getRole();
-  }
-
   Educativo() {
     this.nav.push(HomeentertainmentPage);
   }

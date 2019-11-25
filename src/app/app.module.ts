@@ -8,6 +8,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { AdminhomePage } from '../pages/adminhome/adminhome'
 import { HomePage } from '../pages/home/home';
 import { HomeentertainmentPage } from '../pages/homeentertainment/homeentertainment';
+import { PurchasesPage } from '../pages/purchases/purchases';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
@@ -70,7 +71,8 @@ import { PayPal, PayPalPayment, PayPalConfiguration } from '@ionic-native/paypal
     CategoryPage,
     SearchbookPage,
     FavoritesPage,
-    ChapterPage
+    ChapterPage,
+    PurchasesPage
   ],
   imports: [
     BrowserModule,
@@ -106,7 +108,8 @@ import { PayPal, PayPalPayment, PayPalConfiguration } from '@ionic-native/paypal
     CategoryPage,
     SearchbookPage,
     FavoritesPage,
-    ChapterPage
+    ChapterPage,
+    PurchasesPage
   ],
   providers: [
     AuthData,

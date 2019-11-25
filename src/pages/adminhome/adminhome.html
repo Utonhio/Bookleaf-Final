@@ -2,15 +2,39 @@
   <ion-toolbar>
     <div class="bar bar-subheader item-input-inset bar-light" id="search-bar">
       <label class="item-input-wrapper">
+        <img id="iconBl"start src='../../assets/imgs/logo1.png'><p id="textBl">Bookleaf</p>
         <ion-icon end (click)="openSearch()" slot="icon-only" name="search" id="icon-color"></ion-icon>
       </label>
     </div>
   </ion-toolbar>
 </ion-header>
 
-
-
 <ion-content>
+
+    <div class="category">
+        <h4>Venta</h4>
+      </div>
+      <div class="category-block">
+        <ion-slides #slide3>
+          <ion-slide *ngFor="let book of venta">
+            <div>
+              <ion-card id="card-book" (tap)="open(book)">
+    
+                <img class="img-size" src="{{book.urlCover}}">
+                <div id="stars-group">
+    
+                  <p id="stars-numbers">{{book.stars}}<ion-icon id="like-icon" ios="ios-thumbs-up" md="md-thumbs-up">
+                    </ion-icon>
+                  </p>
+                </div>
+              </ion-card>
+            </div>
+          </ion-slide>
+        </ion-slides>
+      </div>
+    
+      <hr class="style13">
+      
   <div class="category">
     <h4>Libros gratuitos</h4>
   </div>

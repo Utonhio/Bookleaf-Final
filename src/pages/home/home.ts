@@ -8,6 +8,7 @@ import { InicioPage } from '../inicio/inicio';
 import { CategoryPage } from '../category/category';
 import { SearchbookPage } from '../searchbook/searchbook';
 import { FavoritesPage } from '../favorites/favorites';
+import { PurchasesPage } from '../purchases/purchases';
 
 @Component({
   selector: 'page-home',
@@ -25,7 +26,7 @@ export class HomePage {
   mystery = [];
   science = [];
   history = [];
-
+  venta = [];
 
 
   constructor(public nav: NavController, private cartService: LibraryProvider) { }
@@ -36,6 +37,7 @@ export class HomePage {
     this.mystery = this.cartService.getCategoryMysteryAndThriller();
     this.science = this.cartService.getCategoryScienceFiction();
     this.history = this.cartService.getCategoryHistory();
+    this.venta = this.cartService.getBooksVenta()
   }
 
   ionViewWillEnter() {
@@ -62,6 +64,9 @@ export class HomePage {
     this.slide5.slidesPerView = 3;
     this.slide5.spaceBetween = 3;
 
+    this.slide6.slidesPerView = 3;
+    this.slide6.spaceBetween = 3;
+
   }
 
 
@@ -85,6 +90,10 @@ export class HomePage {
     this.nav.push(SearchbookPage, {
       searchPremium: 'Premium'
     });
+  }
+  
+  openPurchases(){
+    this.nav.push(PurchasesPage);
   }
 
   open(book) {

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { AuthData } from '../../providers/auth-data';
 import { LoginPage } from '../login/login';
 import * as firebase from 'Firebase';
@@ -15,7 +15,8 @@ export class ProfilePage {
   public useremail = '';
   public userId = '';
   public role = [];
-  constructor(public navCtrl: NavController, public navParams: NavParams, public authData: AuthData, private payPal: PayPal) {
+  loading: any;
+  constructor(public navCtrl: NavController,public loadingCtrl: LoadingController, public navParams: NavParams, public authData: AuthData, private payPal: PayPal) {
   }
 
   ionViewDidLoad() {
@@ -26,9 +27,18 @@ export class ProfilePage {
     console.log(this.role)
   }
 
+  async presentLoading() {
+    this.loading = await this.loadingCtrl.create({
+      content: 'Cerrando sesión...'
+    });
+    return this.loading.present();
+  }
+
   logOut() {
+    this.presentLoading();
     this.authData.logoutUser().then(() => {
       this.navCtrl.setRoot(LoginPage);
+      this.loading.dismiss();
     });
   }
 

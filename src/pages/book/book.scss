@@ -7,9 +7,24 @@ page-book {
     height: 100%;
     }
 
+    .item-md{
+        background-color: #6DB452;
+        height: 50%;
+    }
+
+    .item-md.item-block .item-inner{
+        border-bottom: 1px #6DB452;
+    }
+
     #touchlayer{
         z-index: 999;
         position: absolute
+    }
+
+    .item-md p{
+        margin: auto;
+        width: 50%;
+        padding: 10px;
     }
 
     .range-md.range-has-pin {
@@ -37,8 +52,12 @@ page-book {
     }
 
     #page-numbers{
-        font-size: 15px !important;
-        padding-left: 10px;
+        font-size: 14px !important;
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+        position: relative;
+        left: 9%;
     }
 
     .toolbar {

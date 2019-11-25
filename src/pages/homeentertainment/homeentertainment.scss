@@ -10,6 +10,21 @@ page-homeentertainment {
     background-color: #6DB452;
   }
 
+  #iconBl{
+    
+    position: absolute;
+    top: 0;
+    width: 14vw;
+  }
+
+  #textBl{
+    position: absolute;
+    top: -2px;
+    left: 15vw;
+    font-family: auto;
+    color: white;
+    font-size: 20px;
+  }
   #card-book{
     width: 32vw;
     height: 33vh; 

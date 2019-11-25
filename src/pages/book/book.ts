@@ -17,6 +17,8 @@ export class BookPage {
   pageTitle: string;
   bookname = '';
   showToolbars: boolean = true;
+  showIonRange: boolean = false;
+  showLoading: boolean = true;
   bgColor: any;
   toolbarColor: string = 'light';
 
@@ -46,7 +48,7 @@ export class BookPage {
 
       this.book.getToc().then(toc => {
         this._updatePageTitle();
-        //this.loading.dismiss();
+        this.loading.dismiss();
         
       });
 
@@ -187,9 +189,9 @@ export class BookPage {
       let totalPages = this.book.pagination.totalPages;
       
       this.totalPages = `of ${totalPages}`; 
-      let pages = this.goToLastUserPage()
-      console.log(pages)
-      this.loading.dismiss();
+      this.showLoading = false;
+      this.showIonRange = true;
+      
     }).catch(error => {
      
     });

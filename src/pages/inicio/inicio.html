@@ -8,10 +8,10 @@
     <div id="buttonEducation">
         <button ion-button  type="submit" (tap)="Educativo()" id="btnEdu">Educación</button>
     </div>
-    <div id="buttonEntertainment" *ngIf="this.role.rol == 'GRATUITO'">
+    <!--<div id="buttonEntertainment" *ngIf="this.role.rol == 'GRATUITO'">
         <button ion-button  type="submit" (tap)="upgradePremium()" id="btnEnt">Entretenimiento</button>
-    </div>
-    <div id="buttonEntertainment" *ngIf="this.role.rol == 'PREMIUM' || this.role.rol == 'ADMINISTRADOR'">
+    </div>-->
+    <div id="buttonEntertainment">
         <button ion-button  type="submit" (tap)="Entretenimiento()" id="btnEnt">Entretenimiento</button>
     </div>
     <div id="buttonEducation" *ngIf="this.role.rol == 'ADMINISTRADOR'">

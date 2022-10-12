@@ -30,7 +30,7 @@
     "card.io.cordova.mobilesdk": "^2.1.0",
     "com.paypal.cordova.mobilesdk": "^3.5.0",
     "cordova-android": "8.0.0",
-    "cordova-browser": "5.0.4",
+    "cordova-browser": "6.0.0",
     "cordova-ios": "5.0.1",
     "firebase": "^5.11.1",
     "firebase-admin": "^8.6.1",

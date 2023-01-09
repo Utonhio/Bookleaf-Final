@@ -33,7 +33,7 @@
     "cordova-browser": "5.0.4",
     "cordova-ios": "5.0.1",
     "firebase": "^5.11.1",
-    "firebase-admin": "^8.6.1",
+    "firebase-admin": "^11.4.1",
     "ionic-angular": "3.9.5",
     "ionicons": "3.0.0",
     "onesignal-cordova-plugin": "^2.5.2",
